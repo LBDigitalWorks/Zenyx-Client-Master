@@ -1,0 +1,16 @@
+[
+  {
+    "ip": "127.0.0.1",
+    "name": "Main",
+    "type": "NORMAL",
+    "spriteId": "2271",
+    "description": "Local Development World"
+  },
+  {
+    "ip": "",
+    "name": "Pvp",
+    "type": "PVP",
+    "spriteId": "2299",
+    "description": "Pvp World"
+  }
+]
