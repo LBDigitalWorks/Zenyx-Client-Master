@@ -1,7 +1,9 @@
 # Created by https://www.gitignore.io/api/java,maven,eclipse,jetbrains
 
 .gradle/
+.gradle-user-home/
 .idea/
+.lwjgl-rl-amd64/
 
 # Logback
 logback.xml
@@ -179,8 +181,13 @@ buildNumber.properties
 *.pem
 *.cert
 obfuscation_map.txt
+mapping.txt
+proguard_obfuscation_map.txt
+META-INF/
 /runelite-master/
 /.claude/settings.local.json
 /tmp-video-frames/
 /tmp_frames_211857/
 /tmp_spell_dump/
+/screenshots/
+/tmp_*.png
