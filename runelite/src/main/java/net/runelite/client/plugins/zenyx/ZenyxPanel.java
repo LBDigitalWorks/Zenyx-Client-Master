@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, Elvarg Rebirth
+ * Copyright (c) 2024, Zenyx
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,7 +22,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.elvarg;
+package net.runelite.client.plugins.zenyx;
 
 import com.google.inject.Inject;
 import java.awt.BorderLayout;
@@ -52,7 +52,7 @@ import net.runelite.client.ui.PluginPanel;
 import net.runelite.client.util.ImageUtil;
 import net.runelite.client.util.LinkBrowser;
 
-public class ElvargPanel extends PluginPanel
+public class ZenyxPanel extends PluginPanel
 {
 	private static final ImageIcon ARROW_RIGHT_ICON;
 	private static final ImageIcon DISCORD_ICON;
@@ -80,19 +80,19 @@ public class ElvargPanel extends PluginPanel
 	private EventBus eventBus;
 
 	@Inject
-	private ElvargConfig config;
+	private ZenyxConfig config;
 
 	@Inject
-	private ElvargPlugin plugin;
+	private ZenyxPlugin plugin;
 
 	static
 	{
-		ARROW_RIGHT_ICON = new ImageIcon(ImageUtil.loadImageResource(ElvargPanel.class, "/util/arrow_right.png"));
-		DISCORD_ICON = new ImageIcon(ImageUtil.loadImageResource(ElvargPanel.class, "/net/runelite/client/plugins/info/discord_icon.png"));
-		WEBSITE_ICON = new ImageIcon(ImageUtil.loadImageResource(ElvargPanel.class, "/net/runelite/client/plugins/info/github_icon.png"));
-		VOTE_ICON = new ImageIcon(ImageUtil.loadImageResource(ElvargPanel.class, "/net/runelite/client/plugins/info/patreon_icon.png"));
-		STORE_ICON = new ImageIcon(ImageUtil.loadImageResource(ElvargPanel.class, "/net/runelite/client/plugins/info/patreon_icon.png"));
-		WIKI_ICON = new ImageIcon(ImageUtil.loadImageResource(ElvargPanel.class, "/net/runelite/client/plugins/info/wiki_icon.png"));
+		ARROW_RIGHT_ICON = new ImageIcon(ImageUtil.loadImageResource(ZenyxPanel.class, "/util/arrow_right.png"));
+		DISCORD_ICON = new ImageIcon(ImageUtil.loadImageResource(ZenyxPanel.class, "/net/runelite/client/plugins/info/discord_icon.png"));
+		WEBSITE_ICON = new ImageIcon(ImageUtil.loadImageResource(ZenyxPanel.class, "/net/runelite/client/plugins/info/github_icon.png"));
+		VOTE_ICON = new ImageIcon(ImageUtil.loadImageResource(ZenyxPanel.class, "/net/runelite/client/plugins/info/patreon_icon.png"));
+		STORE_ICON = new ImageIcon(ImageUtil.loadImageResource(ZenyxPanel.class, "/net/runelite/client/plugins/info/patreon_icon.png"));
+		WIKI_ICON = new ImageIcon(ImageUtil.loadImageResource(ZenyxPanel.class, "/net/runelite/client/plugins/info/wiki_icon.png"));
 	}
 
 	void init()
@@ -107,7 +107,7 @@ public class ElvargPanel extends PluginPanel
 		headerPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		headerPanel.setLayout(new GridLayout(0, 1));
 
-		JLabel titleLabel = new JLabel("Elvarg Rebirth");
+		JLabel titleLabel = new JLabel("Zenyx");
 		titleLabel.setFont(FontManager.getRunescapeBoldFont());
 		titleLabel.setForeground(new Color(138, 43, 226)); // Purple color to match logo
 		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -209,7 +209,7 @@ public class ElvargPanel extends PluginPanel
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
 	{
-		if (event.getGroup().equals(ElvargPlugin.CONFIG_GROUP_KEY))
+		if (event.getGroup().equals(ZenyxPlugin.CONFIG_GROUP_KEY))
 		{
 			updateLinks();
 		}
@@ -334,3 +334,4 @@ public class ElvargPanel extends PluginPanel
 		return "<html><body style = 'color:#a5a5a5'>" + key + "<span style = 'color:white'>" + value + "</span></body></html>";
 	}
 }
+

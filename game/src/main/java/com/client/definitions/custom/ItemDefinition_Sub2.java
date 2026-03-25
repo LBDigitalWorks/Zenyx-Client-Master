@@ -42,8 +42,8 @@ public class ItemDefinition_Sub2 {
             itemDef.itemActions = new String[]{null, "Wear", null, null, null};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
-            itemDef.name = "Anguish of Elvarg"; //Name
-            itemDef.description = "Anguish of Elvarg"; //Description
+            itemDef.name = "Anguish of Zenyx"; //Name
+            itemDef.description = "Anguish of Zenyx"; //Description
             itemDef.modelId = 65029;
             itemDef.spriteScale = 500;
             itemDef.spriteYRotation = 500;
@@ -68,7 +68,7 @@ public class ItemDefinition_Sub2 {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{"Open", null, null, null, null};
             itemDef.name = "Veteran's Rewards Box"; //Name
-            itemDef.description = "Reward for veteran's of Elvarg community."; //Description
+            itemDef.description = "Reward for veteran's of Zenyx community."; //Description
             itemDef.originalModelColors = new short[1];
             itemDef.modifiedModelColors = new short[1];
             itemDef.originalModelColors[0] = 22410;
@@ -211,8 +211,8 @@ public class ItemDefinition_Sub2 {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wear", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
-            itemDef.name = "Blade of Elvarg"; //Name
-            itemDef.description = "Blade of Elvarg"; //Description
+            itemDef.name = "Blade of Zenyx"; //Name
+            itemDef.description = "Blade of Zenyx"; //Description
             itemDef.modelId = 63289;
             itemDef.spriteScale = 1500;
             itemDef.spriteYRotation = 500;
@@ -921,8 +921,8 @@ public class ItemDefinition_Sub2 {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
-            itemDef.name = "Elvarg twisted bow"; //Name
-            itemDef.description = "The legendary Bow of Elvarg"; //Description
+            itemDef.name = "Zenyx twisted bow"; //Name
+            itemDef.description = "The legendary Bow of Zenyx"; //Description
             itemDef.modelId  = 63040;
             itemDef.spriteScale = 1750;
             itemDef.spriteYRotation = 720;
@@ -5710,11 +5710,12 @@ public class ItemDefinition_Sub2 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg buckler";
-            itemDef.description = "A buckler carved from the twisted remains of the Elvarg.";
+            itemDef.name = "Zenyx buckler";
+            itemDef.description = "A buckler carved from the twisted remains of the Zenyx.";
         }
         return itemDef;
     }
 }
+
 
 

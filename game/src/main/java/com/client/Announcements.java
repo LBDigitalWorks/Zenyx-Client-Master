@@ -14,7 +14,7 @@ public class Announcements {
 
     private static final String[] announcements = {
             "In the ashes of bitter tragedy, lie the seeds of astonishing rebirth. On your way to greatness, you will fall, but like a Phoenix rising from the ashes, you too shall rise again.",
-            "Welcome to Elvarg Rebirth!  Founder: Sussy     Founder: BananaStreet",
+            "Welcome to Zenyx!  Founder: Sussy     Founder: BananaStreet",
     };
 
     static int ticks = 0;
@@ -38,3 +38,4 @@ public class Announcements {
 
 
 }
+

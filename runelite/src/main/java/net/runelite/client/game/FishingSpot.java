@@ -33,15 +33,15 @@ import static net.runelite.api.NpcID.*;
 @Getter
 public enum FishingSpot
 {
-	// Elvarg Rebirth server-specific fishing spot NPC IDs confirmed from server source.
+	// Zenyx server-specific fishing spot NPC IDs confirmed from server source.
 	// IDs 331 and 334 are rod/cage-harpoon spots; 36068 is the AFK fishing spot.
-	ELVARG_ROD("Trout, Salmon, Pike", ItemID.RAW_TROUT,
+	ZENYX_ROD("Trout, Salmon, Pike", ItemID.RAW_TROUT,
 		331
 	),
-	ELVARG_CAGE_HARPOON("Lobster, Swordfish, Tuna", ItemID.RAW_LOBSTER,
+	ZENYX_CAGE_HARPOON("Lobster, Swordfish, Tuna", ItemID.RAW_LOBSTER,
 		334
 	),
-	ELVARG_AFK("Shrimp, Anchovies", ItemID.RAW_SHRIMPS,
+	ZENYX_AFK("Shrimp, Anchovies", ItemID.RAW_SHRIMPS,
 		36068
 	),
 	SHRIMP("Shrimp, Anchovies, Sardine, Herring", "Anchovies", ItemID.RAW_SHRIMPS,

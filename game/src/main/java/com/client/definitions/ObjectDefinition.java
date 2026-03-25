@@ -97,7 +97,7 @@ public final class ObjectDefinition extends DualNode implements RSObjectComposit
 					definition.actions = new String[]{null, null, null, null, null};
 					break;
 				case 36062:
-					definition.description = "Teleports you anywhere around Elvarg.";
+					definition.description = "Teleports you anywhere around Zenyx.";
 					definition.actions = new String[]{"Activate", "Previous Location", null, null, null};
 					break;
 				case 48218:
@@ -220,11 +220,11 @@ public final class ObjectDefinition extends DualNode implements RSObjectComposit
 					definition.name = "@pur@Platinum Altar";
 					break;
 				case 29064:
-					definition.name = "Elvarg Leaderboards";
+					definition.name = "Zenyx Leaderboards";
 					definition.actions = new String[]{"View", null, null, null, null};
 					break;
 				case 33320:
-					return copy(definition, 33320, 33321, "Flame of Elvarg", new String[]{"Burn", "Burn Rates", null, null, null});
+					return copy(definition, 33320, 33321, "Flame of Zenyx", new String[]{"Burn", "Burn Rates", null, null, null});
 				case 33318:
 					definition.name = "Pool of Darkened Blood";
 					definition.modelIds = new int[]{63489};
@@ -261,14 +261,14 @@ public final class ObjectDefinition extends DualNode implements RSObjectComposit
 
 				case 23675:
 					definition.modelIds = new int[]{63116};
-					definition.name = "Elvarg Loot Chest";
+					definition.name = "Zenyx Loot Chest";
 					definition.actions = new String[]{"Unlock", null, null, null, null};
 					definition.setSizeX(3);
 					definition.setSizeY(1);
 					break;
 				case 24712:
 					definition.modelIds = new int[]{63185};
-					definition.name = "Flames of Elvarg";
+					definition.name = "Flames of Zenyx";
 					definition.actions = new String[]{"Sacrifice", "Sacrifice Rates", null, null, null};
 					break;
 				case 11492:
@@ -290,12 +290,12 @@ public final class ObjectDefinition extends DualNode implements RSObjectComposit
 					definition.setSizeY(3);
 					break;
 				case 6097:
-					definition.name = "Well of Elvarg";
+					definition.name = "Well of Zenyx";
 					definition.modelIds = new int[] { 65022 };
 					definition.actions = new String[]{"Donate", null, null, null, null};
 					break;
 				case 23673:
-					definition.name = "Statue of Queen Elvarg";
+					definition.name = "Statue of Queen Zenyx";
 					definition.modelIds = new int[] { 63119 };
 					definition.actions = new String[]{null, null, null, null, null};
 					definition.setSizeX(3);
@@ -502,7 +502,7 @@ public final class ObjectDefinition extends DualNode implements RSObjectComposit
 					definition.actions = new String[]{"Teleport", null, null, null, null};
 					break;
 				case 10738:
-					definition.name = "Elvarg Teleport Device";
+					definition.name = "Zenyx Teleport Device";
 					definition.modelIds = new int[]{63118,};
 					definition.actions = new String[]{"Teleport", null, null, null, null};
 					definition.animation = 3030;
@@ -521,7 +521,7 @@ public final class ObjectDefinition extends DualNode implements RSObjectComposit
 					definition.actions = new String[]{"Teleport", null, null, null, null};
 					break;
 				case 3650:
-					definition.name = "Elvarg Golem Entrence";
+					definition.name = "Zenyx Golem Entrence";
 					definition.actions = new String[]{"Enter", null, null, null, null};
 					break;
 				case 7127:
@@ -1767,4 +1767,5 @@ public final class ObjectDefinition extends DualNode implements RSObjectComposit
 	}
 
 }
+
 

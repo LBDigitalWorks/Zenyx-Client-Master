@@ -615,9 +615,9 @@ public class GameRenderer {
             j %= 60;
             int yPosition = !client.isResized() ? 329 : Client.canvasHeight - 165;
             if (j < 10)
-                client.aTextDrawingArea_1271.method385(0xffff00, "Elvarg Rebirth will be updating: " + l + ":0" + j, yPosition, 5);
+                client.aTextDrawingArea_1271.method385(0xffff00, "Zenyx will be updating: " + l + ":0" + j, yPosition, 5);
             else
-                client.aTextDrawingArea_1271.method385(0xffff00, "Elvarg Rebirth will be updating: " + l + ":" + j, yPosition, 5);
+                client.aTextDrawingArea_1271.method385(0xffff00, "Zenyx will be updating: " + l + ":" + j, yPosition, 5);
 
             client.anInt849++;
             if (client.anInt849 > 75) {
@@ -921,3 +921,4 @@ public class GameRenderer {
         }
     }
 }
+

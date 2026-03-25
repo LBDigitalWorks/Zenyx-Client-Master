@@ -542,8 +542,8 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, "Uncharge", "Unload"};
-            itemDef.name = "Elvarg blowpipe"; //Name
-            itemDef.description = "Elvarg blowpipe"; //Description
+            itemDef.name = "Zenyx blowpipe"; //Name
+            itemDef.description = "Zenyx blowpipe"; //Description
             itemDef.modelId = 63069;
             itemDef.spriteScale = 1158;
             itemDef.spriteYRotation = 768;
@@ -569,7 +569,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, null, null, null, "Drop"};
-            itemDef.name = "Elvarg blowpipe(empty)"; //Name
+            itemDef.name = "Zenyx blowpipe(empty)"; //Name
             itemDef.description = "Its an Masori blowpipe"; //Description
             itemDef.modelId = 63035;
             itemDef.spriteScale = 1158;
@@ -2551,8 +2551,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Fang";
-            itemDef.description = "Elvarg Fang.";
+            itemDef.name = "Zenyx Fang";
+            itemDef.description = "Zenyx Fang.";
         }
         if (i == 8382) {
             itemDef.setDefaults();
@@ -2576,8 +2576,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Slayer Helmet";
-            itemDef.description = "Elvarg Slayer Helmet";
+            itemDef.name = "Zenyx Slayer Helmet";
+            itemDef.description = "Zenyx Slayer Helmet";
         }
         if (i == 5771) {
             itemDef.setDefaults();
@@ -2676,8 +2676,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Crystal Helm";
-            itemDef.description = "Elvarg Crystal Helm";
+            itemDef.name = "Zenyx Crystal Helm";
+            itemDef.description = "Zenyx Crystal Helm";
         }
         if (i == 2872) {
             itemDef.setDefaults();
@@ -2701,8 +2701,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Crystal Body";
-            itemDef.description = "Elvarg Crystal Body";
+            itemDef.name = "Zenyx Crystal Body";
+            itemDef.description = "Zenyx Crystal Body";
         }
         if (i == 2873) {
             itemDef.setDefaults();
@@ -2726,8 +2726,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Crystal Legs";
-            itemDef.description = "Elvarg Crystal Legs";
+            itemDef.name = "Zenyx Crystal Legs";
+            itemDef.description = "Zenyx Crystal Legs";
         }
         
         if (i == 17) {
@@ -2802,8 +2802,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Skilling Hood";
-            itemDef.description = "Elvarg Skilling Hood";
+            itemDef.name = "Zenyx Skilling Hood";
+            itemDef.description = "Zenyx Skilling Hood";
         }
         if (i == 470) {
             itemDef.setDefaults();
@@ -2827,8 +2827,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Skilling Body";
-            itemDef.description = "Elvarg Skilling Body";
+            itemDef.name = "Zenyx Skilling Body";
+            itemDef.description = "Zenyx Skilling Body";
         }
         if (i == 472) {
             itemDef.setDefaults();
@@ -2852,16 +2852,16 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Skilling Legs";
-            itemDef.description = "Elvarg Skilling Legs";
+            itemDef.name = "Zenyx Skilling Legs";
+            itemDef.description = "Zenyx Skilling Legs";
         }
         if (i == 474) //ID
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wear", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
-            itemDef.name = "Elvarg Skilling Boots"; //Name
-            itemDef.description = "Elvarg Skilling Boots"; //Description
+            itemDef.name = "Zenyx Skilling Boots"; //Name
+            itemDef.description = "Zenyx Skilling Boots"; //Description
             itemDef.modelId = 63668;
             itemDef.spriteScale = 976;
             itemDef.spriteYRotation = 147;
@@ -2906,8 +2906,8 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Skilling Cape";
-            itemDef.description = "Elvarg Skilling Cape! ";
+            itemDef.name = "Zenyx Skilling Cape";
+            itemDef.description = "Zenyx Skilling Cape! ";
         }
         if (i == 3102) //ID
         {
@@ -3290,16 +3290,16 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Starter Staff";
-            itemDef.description = "Staff made with the head of the Legendary Elvarg";
+            itemDef.name = "Zenyx Starter Staff";
+            itemDef.description = "Staff made with the head of the Legendary Zenyx";
         }
         if (i == 587) //ID
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wear", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
-            itemDef.name = "Elvarg Starter Scimitar"; //Name
-            itemDef.description = "Elvarg Starter Scimitar"; //Description
+            itemDef.name = "Zenyx Starter Scimitar"; //Name
+            itemDef.description = "Zenyx Starter Scimitar"; //Description
             itemDef.modelId = 63057;
             itemDef.spriteScale = 1500;
             itemDef.spriteYRotation = 500;
@@ -3324,8 +3324,8 @@ public class ItemDefinition_Sub3 {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
-            itemDef.name = "Elvarg Starter Bow"; //Name
-            itemDef.description = "Elvarg Starter Bow"; //Description
+            itemDef.name = "Zenyx Starter Bow"; //Name
+            itemDef.description = "Zenyx Starter Bow"; //Description
             itemDef.modelId = 63060;
             itemDef.spriteScale = 1225;
             itemDef.spriteYRotation = 720;
@@ -3806,7 +3806,7 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Staff of Elvarg";
+            itemDef.name = "Staff of Zenyx";
             itemDef.description = "Staff";
         }
         if (i == 2529) {
@@ -3840,7 +3840,7 @@ public class ItemDefinition_Sub3 {
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
             itemDef.name = "Scorched twisted bow"; //Name
-            itemDef.description = "The legendary Bow of Elvarg"; //Description
+            itemDef.description = "The legendary Bow of Zenyx"; //Description
             itemDef.modelId  = 63319;
             itemDef.spriteScale = 1875;
             itemDef.spriteYRotation = 720;
@@ -4091,7 +4091,7 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Assembler";
+            itemDef.name = "Zenyx Assembler";
         }
         if (i == 24) {
             itemDef.setDefaults();
@@ -4115,7 +4115,7 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Imbued Elvarg Cape";
+            itemDef.name = "Imbued Zenyx Cape";
             itemDef.description = "Imbued Kaida Cape made by the gods! ";
         }
         if (i == 33) {
@@ -4581,7 +4581,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{"Open", null, null, "Quick- Open", "Drop"};
-            itemDef.name = "Super Elvarg Chest"; //Name
+            itemDef.name = "Super Zenyx Chest"; //Name
             itemDef.modelId = 63037;
             itemDef.spriteScale = 3000;
             itemDef.spriteYRotation = 609;
@@ -5452,7 +5452,7 @@ public class ItemDefinition_Sub3 {
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
             itemDef.name = "Elder Accursed Sceptre";
-            itemDef.description = "Staff made with the head of the Legendary Elvarg";
+            itemDef.description = "Staff made with the head of the Legendary Zenyx";
         }
         if (i == 418) //ID
         {
@@ -5540,7 +5540,7 @@ public class ItemDefinition_Sub3 {
             itemDef.primaryFemaleModel = 63588;
             itemDef.itemActions = new String[5];
             itemDef.itemActions[1] = "Wear";
-            itemDef.name = "Elvarg Scythe";
+            itemDef.name = "Zenyx Scythe";
             itemDef.spriteScale = 3000;
             itemDef.spriteYRotation = 1750;
             itemDef.spriteZRotation = 0;
@@ -5615,7 +5615,7 @@ public class ItemDefinition_Sub3 {
             itemDef.itemActions = new String[5];
             itemDef.itemActions[1] = "Wear";
             itemDef.name = "Noxious Scythe";
-            itemDef.description = "A scythe from Elvarg Boss.";
+            itemDef.description = "A scythe from Zenyx Boss.";
             itemDef.spriteScale = 3000;
             itemDef.spriteYRotation = 1750;
             itemDef.spriteZRotation = 0;
@@ -5683,7 +5683,7 @@ public class ItemDefinition_Sub3 {
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
             itemDef.name = "Noxious Staff";
-            itemDef.description = "Staff made with the head of the Legendary Elvarg";
+            itemDef.description = "Staff made with the head of the Legendary Zenyx";
         }
 
         if (i == 715) //ID
@@ -5743,7 +5743,7 @@ public class ItemDefinition_Sub3 {
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
             itemDef.name = "Pumpkin twisted bow"; //Name
-            itemDef.description = "The legendary Bow of Elvarg"; //Description
+            itemDef.description = "The legendary Bow of Zenyx"; //Description
             itemDef.modelId  = 63283;
             itemDef.spriteScale = 1875;
             itemDef.spriteYRotation = 720;
@@ -6263,7 +6263,7 @@ public class ItemDefinition_Sub3 {
             itemDef.itemActions = new String[]{null, "Wear", null, null, "Drop"};
             itemDef.groundActions = new String[]{null, null, "Take", null, null};
             itemDef.name = "Cape of Memories"; //Name
-            itemDef.description = "Elvarg reaper cape"; //Description
+            itemDef.description = "Zenyx reaper cape"; //Description
             itemDef.modelId = 63540;
             itemDef.spriteScale = 2232;
             itemDef.spriteYRotation = 517;
@@ -6589,15 +6589,15 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Cape";
-            itemDef.description = "Elvarg Cape made by the gods! ";
+            itemDef.name = "Zenyx Cape";
+            itemDef.description = "Zenyx Cape made by the gods! ";
         }
         if (i == 23800) //ID
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wear", null, null, "Drop"};
-            itemDef.name = "Elvarg spirit shield"; //Name
-            itemDef.description = "Elvarg spirit shield"; //Description
+            itemDef.name = "Zenyx spirit shield"; //Name
+            itemDef.description = "Zenyx spirit shield"; //Description
             itemDef.modelId = 63687;
             itemDef.spriteScale = 1300;
             itemDef.spriteYRotation = 500;
@@ -6948,7 +6948,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
-            itemDef.name = "Elvarg Pernix Cowl"; //Name
+            itemDef.name = "Zenyx Pernix Cowl"; //Name
             itemDef.description = "Its an Scorched Pernix Cowl"; //Description
             itemDef.modelId = 63613;
             itemDef.spriteScale = 750;
@@ -6976,7 +6976,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
-            itemDef.name = "Elvarg Pernix body"; //Name
+            itemDef.name = "Zenyx Pernix body"; //Name
             itemDef.description = "Its an Scorched Pernix body"; //Description
             itemDef.modelId = 63610;
             itemDef.spriteScale = 1480;
@@ -6997,7 +6997,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
-            itemDef.name = "Elvarg Pernix Chaps"; //Name
+            itemDef.name = "Zenyx Pernix Chaps"; //Name
             itemDef.modelId = 63607;
             itemDef.primaryMaleModel = 63608;
             itemDef.primaryFemaleModel = 63609;
@@ -7017,7 +7017,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
-            itemDef.name = "Elvarg Virtus Mask"; //Name
+            itemDef.name = "Zenyx Virtus Mask"; //Name
             itemDef.description = "Its an Virtus Mask"; //Description
             itemDef.modelId = 63616;
             itemDef.spriteScale = 750;
@@ -7033,7 +7033,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
-            itemDef.name = "Elvarg Virtus Robe Top"; //Name
+            itemDef.name = "Zenyx Virtus Robe Top"; //Name
             itemDef.description = "Its an Virtus Robe Top"; //Description
             itemDef.modelId = 63619;
             itemDef.spriteScale = 1200;
@@ -7049,7 +7049,7 @@ public class ItemDefinition_Sub3 {
         {
             itemDef.setDefaults();
             itemDef.itemActions = new String[]{null, "Wield", null, null, "Drop"};
-            itemDef.name = "Elvarg Virtus Robe Bottoms"; //Name
+            itemDef.name = "Zenyx Virtus Robe Bottoms"; //Name
             itemDef.modelId = 63622;
             itemDef.spriteScale = 1789;
             itemDef.spriteYRotation = 431;
@@ -7082,7 +7082,7 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Torva Helm";
+            itemDef.name = "Zenyx Torva Helm";
         }
         if (i == 29377) {
             itemDef.setDefaults();
@@ -7106,7 +7106,7 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Torva Platebody";
+            itemDef.name = "Zenyx Torva Platebody";
         }
 
         if (i == 29376) {
@@ -7131,9 +7131,10 @@ public class ItemDefinition_Sub3 {
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg Torva Platelegs";
+            itemDef.name = "Zenyx Torva Platelegs";
             itemDef.description = "Kaida Torva Platelegs";
         }
         return itemDef;
     }
 }
+

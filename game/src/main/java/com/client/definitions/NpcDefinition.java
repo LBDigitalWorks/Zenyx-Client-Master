@@ -175,7 +175,7 @@ public final class NpcDefinition extends DualNode implements RSNPCComposition {
 			if (id == 7599) {
 				//cachedNpc.models = new int[]{53080, 53081, 53082, 53083, 53084, 117085};
 				//cachedNpc.models = new int[]{63120};
-				cachedNpc.name = "Elvarg Rebirth Guide";
+				cachedNpc.name = "Zenyx Guide";
 				cachedNpc.size = 1;
 			}
 			if (id == 4305) {
@@ -665,7 +665,7 @@ public final class NpcDefinition extends DualNode implements RSNPCComposition {
 			}
 
 			if (id == 9047) { //Slayer Boss 49543
-				cachedNpc.name = "Queen Elvarg";
+				cachedNpc.name = "Queen Zenyx";
 				cachedNpc.combatLevel = 980;
 				cachedNpc.size = 8;
 				cachedNpc.onMinimap = true;
@@ -675,7 +675,7 @@ public final class NpcDefinition extends DualNode implements RSNPCComposition {
 				cachedNpc.actions = new String[]{null, "Attack", null, null, null};
 			}
 			if (id == 197) { //Slayer Boss
-				cachedNpc.name = "Princess Elvarg";
+				cachedNpc.name = "Princess Zenyx";
 				cachedNpc.models = new int[]{38611};
 				cachedNpc.size = 2;
 				cachedNpc.onMinimap = true;
@@ -1979,3 +1979,4 @@ public final class NpcDefinition extends DualNode implements RSNPCComposition {
 
     }
 }
+

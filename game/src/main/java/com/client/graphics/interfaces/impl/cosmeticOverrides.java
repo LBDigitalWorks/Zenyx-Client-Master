@@ -46,7 +46,7 @@ public class cosmeticOverrides extends RSInterface {
         int yOffset = 40;
         int xOffset = 40;
         //titles
-        addText(interfaceId, "Elvarg's Cosmetic Overrides", font, 2, 0xFE981F, false, true);
+        addText(interfaceId, "Zenyx's Cosmetic Overrides", font, 2, 0xFE981F, false, true);
         setBounds(interfaceId++,quanityStart, y+9, childId++, widget);
 
         //head slot - 57006
@@ -115,7 +115,7 @@ public class cosmeticOverrides extends RSInterface {
         setBounds(interfaceId++, 477, 12, childId++, widget); //Close
         interfaceId++;
 
-        addText(interfaceId, "Elvarg's Cosmetic Overrides", font, 2, 0xFE981F, false, true);
+        addText(interfaceId, "Zenyx's Cosmetic Overrides", font, 2, 0xFE981F, false, true);
         setBounds(interfaceId++,160, 22, childId++, widget);
 
 
@@ -145,3 +145,4 @@ public class cosmeticOverrides extends RSInterface {
     }
 }
 */
+

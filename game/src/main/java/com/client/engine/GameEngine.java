@@ -574,8 +574,8 @@ public abstract class GameEngine extends Applet implements Runnable, WindowListe
 
     protected void showFatalError(String errorCode) {
         SwingUtilities.invokeLater(() ->
-                new FatalErrorDialog("Elvarg Rebirth has crashed with the message: " + errorCode)
-                        .setTitle("Elvarg Rebirth", "Elvarg Rebirth has crashed")
+                new FatalErrorDialog("Zenyx has crashed with the message: " + errorCode)
+                        .setTitle("Zenyx", "Zenyx has crashed")
                         .addHelpButtons()
                         .open());
     }
@@ -832,3 +832,4 @@ public abstract class GameEngine extends Applet implements Runnable, WindowListe
     }
 
 }
+

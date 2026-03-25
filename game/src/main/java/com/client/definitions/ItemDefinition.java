@@ -629,15 +629,15 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				break;
 
 			case 26747:
-				itemDef.name = "Elvarg starter helm";
+				itemDef.name = "Zenyx starter helm";
 				itemDef.description = "A great starter helm for your adventures on BloodLust.";
 				break;
 			case 26753:
-				itemDef.name = "Elvarg starter body";
+				itemDef.name = "Zenyx starter body";
 				itemDef.description = "A great starter body for your adventures on BloodLust.";
 				break;
 			case 26759:
-				itemDef.name = "Elvarg starter legs";
+				itemDef.name = "Zenyx starter legs";
 				itemDef.description = "A great pair of starter legs for your adventures on BloodLust.";
 				break;
 
@@ -672,7 +672,7 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				itemDef.description = "Can be used on the storage unit.";
 				break;
 			case 25424:
-				itemDef.name = "Elvarg Key";
+				itemDef.name = "Zenyx Key";
 				itemDef.description = "Can be used on the storage unit.";
 				break;
 			case 6829:
@@ -833,7 +833,7 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				itemDef.itemActions = new String[]{null, "Wear", "Staff Zone", null, "Drop"};
 				break;
 			case 13319:
-				itemDef.name = "Elvarg Veteran's Cape";
+				itemDef.name = "Zenyx Veteran's Cape";
 				itemDef.description = "A cape only for BloodLust Veterans";
 				itemDef.itemActions = new String[]{null, "Wear", null, null, "Drop"};
 				break;
@@ -862,43 +862,43 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				itemDef.name = "Bloody shards";
 				break;
 			case 24691:
-				itemDef.name = "Elvarg logs";
+				itemDef.name = "Zenyx logs";
 				break;
 			case 13356:
-				itemDef.name = "Elvarg ore";
+				itemDef.name = "Zenyx ore";
 				break;
 			case 13354:
-				itemDef.name = "Elvarg bar";
+				itemDef.name = "Zenyx bar";
 				break;
 			case 9597:
-				itemDef.name = "Elvarg mark";
+				itemDef.name = "Zenyx mark";
 				break;
 			case 23835:
-				itemDef.name = "Elvarg herb";
+				itemDef.name = "Zenyx herb";
 				break;
 			case 20856:
-				itemDef.name = "Elvarg fish";
+				itemDef.name = "Zenyx fish";
 				break;
 			case 26941:
-				itemDef.name = "Elvarg essence";
+				itemDef.name = "Zenyx essence";
 				break;
 			case 1497:
-				itemDef.name = "Elvarg necklace";
+				itemDef.name = "Zenyx necklace";
 				break;
 			case 5745:
-				itemDef.name = "Elvarg brew";
+				itemDef.name = "Zenyx brew";
 				break;
 			case 744:
-				itemDef.name = "Elvarg stone";
+				itemDef.name = "Zenyx stone";
 				break;
 			case 21308:
-				itemDef.name = "Elvarg string";
+				itemDef.name = "Zenyx string";
 				break;
 			case 20908:
-				itemDef.name = "Elvarg plant";
+				itemDef.name = "Zenyx plant";
 				break;
 			case 9952:
-				itemDef.name = "Elvarg imp";
+				itemDef.name = "Zenyx imp";
 				break;
 			case 25547://star fragment
 				itemDef.itemActions = new String[]{"Crush", null, null, null, "Drop"};
@@ -1215,7 +1215,7 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				break;
 
 			case 8350:
-				itemDef.name = "Princess Elvarg";
+				itemDef.name = "Princess Zenyx";
 				itemDef.description = "Boss pet of Slayer Boss.";
 				itemDef.itemActions = new String[]{null, null, null, null, "Drop"};
 				itemDef.modelId = 54579;
@@ -1295,7 +1295,7 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				itemDef.itemActions = new String[] { "Open", null, null, "Quick-Open", "Drop" };
 				break;
 			case 8152:
-				itemDef.name = "Elvarg Chest";
+				itemDef.name = "Zenyx Chest";
 				itemDef.modelId = 63037;
 				itemDef.spriteScale = 3000;
 				itemDef.spriteYRotation = 609;
@@ -1306,7 +1306,7 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				break;
 			case 24731:
 				itemDef.modelId = 65061;
-				itemDef.name = "Ring of Elvarg";
+				itemDef.name = "Ring of Zenyx";
 				itemDef.spriteScale = 750;
 				itemDef.spriteYRotation = 342;
 				itemDef.spriteZRotation = 250;
@@ -1453,8 +1453,8 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				itemDef.description = "Redeem this pass to unlock the premium rewards.";
 				break;
 			case 22316:
-				itemDef.name = "Sword of Elvarg";
-				//itemDef.description= "The Sword of Elvarg.";
+				itemDef.name = "Sword of Zenyx";
+				//itemDef.description= "The Sword of Zenyx.";
 				break;
 			case 27916:
 
@@ -1764,48 +1764,48 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				itemDef.itemActions = new String[] { null, "Use", null, null, "Drop" };
 				break;
 			case 6769:
-				itemDef.name = "$5 Elvarg flame";
+				itemDef.name = "$5 Zenyx flame";
 				itemDef.itemActions = new String[] { "Claim", null, null, null, "Drop" };
 				itemDef.modelId = 63631;
 				itemDef.spriteScale = 550;
 				break;
 			case 2403:
-				itemDef.name = "$10 Elvarg flame";
+				itemDef.name = "$10 Zenyx flame";
 				//itemDef.description= "Claim this scroll to be rewarded with 10 donator points.";
 				itemDef.itemActions = new String[] { "Claim", null, null, null, "Drop" };
 				itemDef.modelId = 63632;
 				itemDef.spriteScale = 550;
 				break;
 			case 2396:
-				itemDef.name = "$25 Elvarg flame";
+				itemDef.name = "$25 Zenyx flame";
 				//itemDef.description= "Claim this scroll to be rewarded with 25 donator points.";
 				itemDef.itemActions = new String[] { "Claim", null, null, null, "Drop" };
 				itemDef.modelId = 63633;
 				itemDef.spriteScale = 550;
 				break;
 			case 786:
-				itemDef.name = "$50 Elvarg flame";
+				itemDef.name = "$50 Zenyx flame";
 				//itemDef.description= "Claim this scroll to be rewarded with 50 donator points.";
 				itemDef.itemActions = new String[] { "Claim", null, null, null, "Drop" };
 				itemDef.modelId = 63634;
 				itemDef.spriteScale = 550;
 				break;
 			case 761:
-				itemDef.name = "$100 Elvarg flame";
+				itemDef.name = "$100 Zenyx flame";
 				//itemDef.description= "Claim this scroll to be rewarded with 100 donator points.";
 				itemDef.itemActions = new String[] { "Claim", null, null, null, "Drop" };
 				itemDef.modelId = 63635;
 				itemDef.spriteScale = 550;
 				break;
 			case 607:
-				itemDef.name = "$250 Elvarg flame";
+				itemDef.name = "$250 Zenyx flame";
 				//itemDef.description= "Claim this scroll to be rewarded with 250 donator points.";
 				itemDef.itemActions = new String[] { "Claim", null, null, null, "Drop" };
 				itemDef.modelId = 63636;
 				itemDef.spriteScale = 550;
 				break;
 			case 608:
-				itemDef.name = "$500 Elvarg flame";
+				itemDef.name = "$500 Zenyx flame";
 				//itemDef.description= "Claim this scroll to be rewarded with 500 donator points.";
 				itemDef.itemActions = new String[] { "Claim", null, null, null, "Drop" };
 				itemDef.modelId = 63637;
@@ -2793,7 +2793,7 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 				return itemDef;
 
 
-				//START OF ELVARG REBIRTH
+				//START OF ZENYX
 			case 50000:
 				itemDef.name = "Avernic Gauntlets";
 				itemDef.id = 50000;
@@ -3877,6 +3877,7 @@ public final class ItemDefinition extends DualNode implements RSItemComposition 
 
 	}
 }
+
 
 
 

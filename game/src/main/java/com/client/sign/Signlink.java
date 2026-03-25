@@ -35,10 +35,10 @@ public class Signlink {
 	public static String[] cacheParentPaths;
 	public static String[] cacheSubPaths;
 	public static File cacheDir;
-	private static final String CACHE_DIR_OVERRIDE_PROP = "elvarg.cache.dir";
-	private static final String CACHE_DIR_OVERRIDE_ENV = "ELVARG_CACHE_DIR";
+	private static final String CACHE_DIR_OVERRIDE_PROP = "zenyx.cache.dir";
+	private static final String CACHE_DIR_OVERRIDE_ENV = "ZENYX_CACHE_DIR";
 	private static final String LOCAL_SERVER_CACHE_DIR =
-			"C:/Users/Jakob/OneDrive/Desktop/Elvarg Rebirth/New Elvarg/Source/Elvarg-Rebirth_Server/Data/cache";
+			"C:/Users/Jakob/OneDrive/Desktop/Zenyx/New Zenyx/Source/Zenyx_Server/Data/cache";
 
 	public int build;
 	public static int archiveCount;
@@ -83,7 +83,7 @@ public class Signlink {
 		}
 
 		cacheParentPaths = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", userHomeDirectory, "/tmp/", ""};
-		cacheSubPaths = new String[]{"elvargV2"};
+		cacheSubPaths = new String[]{"zenyx"};
 
 		label135:
 		for(int var8 = 0; var8 < 4; ++var8) {
@@ -395,3 +395,4 @@ public class Signlink {
 	}
 
 }
+

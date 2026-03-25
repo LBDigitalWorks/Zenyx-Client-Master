@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, Elvarg Rebirth
+ * Copyright (c) 2024, Zenyx
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,7 +22,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.elvarg;
+package net.runelite.client.plugins.zenyx;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -39,18 +39,18 @@ import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import net.runelite.client.ui.overlay.components.TitleComponent;
 
-public class ElvargOverlay extends Overlay
+public class ZenyxOverlay extends Overlay
 {
 	private static final Color STATUS_ONLINE = new Color(0, 200, 83);
 	private static final Color STATUS_OFFLINE = new Color(200, 50, 50);
 
 	private final Client client;
-	private final ElvargConfig config;
-	private final ElvargPlugin plugin;
+	private final ZenyxConfig config;
+	private final ZenyxPlugin plugin;
 	private final PanelComponent panelComponent = new PanelComponent();
 
 	@Inject
-	private ElvargOverlay(Client client, ElvargConfig config, ElvargPlugin plugin)
+	private ZenyxOverlay(Client client, ZenyxConfig config, ZenyxPlugin plugin)
 	{
 		this.client = client;
 		this.config = config;
@@ -71,7 +71,7 @@ public class ElvargOverlay extends Overlay
 
 		// Add title
 		panelComponent.getChildren().add(TitleComponent.builder()
-			.text("Elvarg Rebirth")
+			.text("Zenyx")
 			.color(config.overlayColor())
 			.build());
 
@@ -133,3 +133,4 @@ public class ElvargOverlay extends Overlay
 		return String.format("%02d:%02d:%02d", hours, minutes, secs);
 	}
 }
+

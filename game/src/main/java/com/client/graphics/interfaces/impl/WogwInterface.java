@@ -45,7 +45,7 @@ public class WogwInterface extends RSInterface {
         addSprite(interfaceId, BG);
         inter.child(childId++, interfaceId++, 104, 54);
 
-        addText(interfaceId, 2, RSInterface.DEFAULT_TEXT_COLOR, true, "Well of Elvarg");
+        addText(interfaceId, 2, RSInterface.DEFAULT_TEXT_COLOR, true, "Well of Zenyx");
         inter.child(childId++, interfaceId++, 264, 64);
 
         inter.child(childId++, Interfaces.CLOSE_BUTTON_SMALL, 394, 64);
@@ -104,3 +104,4 @@ public class WogwInterface extends RSInterface {
         inter.setNewButtonClicking();
     }
 }
+

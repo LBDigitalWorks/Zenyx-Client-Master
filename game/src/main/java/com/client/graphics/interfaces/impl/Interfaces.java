@@ -187,12 +187,12 @@ public final class Interfaces extends RSInterface {
     public static void fireofExchange(TextDrawingArea[] tda) {
         RSInterface inter = addInterface(33400);
         addSprite(33401, 0, "Interfaces/FireOfExchange/SPRITE");
-        addText(33402, "Flames of Elvarg", tda, 2, 0xff9933, true, true);
+        addText(33402, "Flames of Zenyx", tda, 2, 0xff9933, true, true);
 		addHoverButton(33932, "Interfaces/HelpInterface/IMAGE", 2, 16, 16, "Close", -1, 33932, 3);
 		addHoveredButton(33933, "Interfaces/HelpInterface/IMAGE", 3, 16, 16, 33933);
 		addSprite(33406, 1, "Interfaces/FireOfExchange/SPRITE");
 		addText(33407, "FoE Value:", tda, 2, 0xff9933, true, true);
-		addText(33408, "Total Flames of Elvarg:", tda, 2, 0xff9933, true, true);
+		addText(33408, "Total Flames of Zenyx:", tda, 2, 0xff9933, true, true);
 		addText(33409, "0", tda, 2, 0xff0000, true, true);
 		addText(33410, "00", tda, 2, 0xff0000, true, true);
 		addButton(33411, 1, "Interfaces/FireOfExchange/BUTTON", "Open Exchange Store");
@@ -4861,6 +4861,7 @@ interfaceId+=5000;
 		setBounds(59509, 374, 127, 8, tab);
 	}
 }
+
 
 
 

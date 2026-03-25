@@ -29,7 +29,7 @@ public class aioShops extends RSInterface {
 
         int quanityStart = x + 10;
         //titles
-        addText(interfaceId, "All Elvarg Shops! Currently Viewing:", font, 2, 0xFE981F, false, true);
+        addText(interfaceId, "All Zenyx Shops! Currently Viewing:", font, 2, 0xFE981F, false, true);
         setBounds(interfaceId++,quanityStart, y+9, childId++, widget);
 
         //current shop name
@@ -74,3 +74,4 @@ public class aioShops extends RSInterface {
     }
 
 }
+

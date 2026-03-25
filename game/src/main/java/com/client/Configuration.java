@@ -20,13 +20,13 @@ public class Configuration {
 	public static boolean developerMode = true;
 	public static boolean DEBUG_MODE = true;
 
-	public static final String CLIENT_TITLE = "Elvarg Rebirth";
-	public static final String WEBSITE = "https://Elvarg.io";
+	public static final String CLIENT_TITLE = "Zenyx";
+	public static final String WEBSITE = "https://zenyx.io";
 	public static final String DEDICATED_SERVER_ADDRESS = LOCAL ? "127.0.0.1" : "152.53.55.11";//51.222.245.179
 	public static final int PORT = 6969;
 	public static final int TEST_PORT = 43594;
 	public static final int CACHE_FOLDER_VERSION = 0;
-	public static final String CACHE_NAME = "Elvarg";
+	public static final String CACHE_NAME = "Zenyx";
 	public static final String DEV_CACHE_NAME = "local_cache";
 	public static final String CACHE_NAME_DEV = CACHE_NAME + "_dev";
 
@@ -80,3 +80,4 @@ public class Configuration {
 	public static boolean alwaysLeftClickAttack;
 	public static boolean hideCombatOverlay;
 }
+

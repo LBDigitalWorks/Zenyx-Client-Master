@@ -938,7 +938,7 @@ public class ItemDefinition_Sub1
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Elvarg defender";
+            itemDef.name = "Zenyx defender";
             itemDef.description = "A defensive weapon.";
         }
         if(i == 29243)
@@ -3143,8 +3143,8 @@ public class ItemDefinition_Sub1
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "Scimitar of Elvarg";
-            itemDef.description = "Scimitar of Elvarg";
+            itemDef.name = "Scimitar of Zenyx";
+            itemDef.description = "Scimitar of Zenyx";
         }
 
         if(i == 29313)
@@ -4988,7 +4988,7 @@ public class ItemDefinition_Sub1
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.certID = -1;
-            itemDef.name = "@pur@Elvarg Veteran Cape";
+            itemDef.name = "@pur@Zenyx Veteran Cape";
             itemDef.description = "Trust me im a doctor";
         }
         if(i == 29723)
@@ -8786,7 +8786,7 @@ public class ItemDefinition_Sub1
         {	itemDef.setDefaults();
             itemDef.itemActions = new String[]{"Open", null, null, null, null};
             itemDef.name = "Founder's Box"; //Name
-            itemDef.description = "This is for players who support Elvarg Rebirth."; //Description
+            itemDef.description = "This is for players who support Zenyx."; //Description
             itemDef.modelId = 63582;
             itemDef.spriteScale = 1180;
             itemDef.spriteYRotation = 160;
@@ -9002,8 +9002,8 @@ public class ItemDefinition_Sub1
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.notedId = -1;
-            itemDef.name = "Occult of Elvarg";
-            itemDef.description = "Occult of Elvarg.";
+            itemDef.name = "Occult of Zenyx";
+            itemDef.description = "Occult of Zenyx.";
         }
         if (i == 3111) {
             itemDef.setDefaults();
@@ -9027,7 +9027,7 @@ public class ItemDefinition_Sub1
             itemDef.certTemplateID = -1;
             itemDef.unnotedId = -1;
             itemDef.notedId = -1;
-            itemDef.name = "Torture of Elvarg";
+            itemDef.name = "Torture of Zenyx";
             itemDef.description = "Upgraded Amulet of Torture(or).";
         }
         return itemDef;
@@ -9035,3 +9035,4 @@ public class ItemDefinition_Sub1
 
 
 }
+

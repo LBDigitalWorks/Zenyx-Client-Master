@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, Elvarg Rebirth
+ * Copyright (c) 2024, Zenyx
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,7 +22,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.elvarg;
+package net.runelite.client.plugins.zenyx;
 
 import java.awt.Color;
 import net.runelite.client.config.Config;
@@ -30,8 +30,8 @@ import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 
-@ConfigGroup(ElvargPlugin.CONFIG_GROUP_KEY)
-public interface ElvargConfig extends Config
+@ConfigGroup(ZenyxPlugin.CONFIG_GROUP_KEY)
+public interface ZenyxConfig extends Config
 {
 	@ConfigSection(
 		name = "Links",
@@ -68,7 +68,7 @@ public interface ElvargConfig extends Config
 	)
 	default String websiteUrl()
 	{
-		return "https://elvarg.io";
+		return "https://zenyx.io";
 	}
 
 	@ConfigItem(
@@ -80,7 +80,7 @@ public interface ElvargConfig extends Config
 	)
 	default String voteUrl()
 	{
-		return "https://elvarg.io/vote";
+		return "https://zenyx.io/vote";
 	}
 
 	@ConfigItem(
@@ -92,7 +92,7 @@ public interface ElvargConfig extends Config
 	)
 	default String storeUrl()
 	{
-		return "https://elvarg.io/store";
+		return "https://zenyx.io/store";
 	}
 
 	@ConfigItem(
@@ -104,7 +104,7 @@ public interface ElvargConfig extends Config
 	)
 	default String wikiUrl()
 	{
-		return "https://elvarg.io/wiki";
+		return "https://zenyx.io/wiki";
 	}
 
 	@ConfigItem(
@@ -167,3 +167,4 @@ public interface ElvargConfig extends Config
 		return new Color(138, 43, 226); // Purple to match branding
 	}
 }
+

@@ -6136,7 +6136,7 @@ public class Client extends GameEngine implements RSClient {
 		}
 
 		logger.debug("Went to end of login method.");
-		firstLoginMessage = "Elvarg Rebirth is being updated.";
+		firstLoginMessage = "Zenyx is being updated.";
 	}
 
 
@@ -14748,3 +14748,4 @@ public class Client extends GameEngine implements RSClient {
 	}
 
 }
+

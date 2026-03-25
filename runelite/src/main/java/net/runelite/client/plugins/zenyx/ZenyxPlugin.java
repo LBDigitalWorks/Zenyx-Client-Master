@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, Elvarg Rebirth
+ * Copyright (c) 2024, Zenyx
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,7 +22,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.elvarg;
+package net.runelite.client.plugins.zenyx;
 
 import com.google.inject.Inject;
 import com.google.inject.Provides;
@@ -43,13 +43,13 @@ import net.runelite.client.ui.overlay.OverlayManager;
 import net.runelite.client.util.ImageUtil;
 
 @PluginDescriptor(
-	name = "Elvarg",
-	description = "Elvarg Rebirth server information and links",
-	tags = {"server", "info", "elvarg", "discord", "rebirth"}
+	name = "Zenyx",
+	description = "Zenyx server information and links",
+	tags = {"server", "info", "zenyx", "discord"}
 )
-public class ElvargPlugin extends Plugin
+public class ZenyxPlugin extends Plugin
 {
-	static final String CONFIG_GROUP_KEY = "elvarg";
+	static final String CONFIG_GROUP_KEY = "zenyx";
 
 	@Inject
 	private Client client;
@@ -61,30 +61,30 @@ public class ElvargPlugin extends Plugin
 	private OverlayManager overlayManager;
 
 	@Inject
-	private ElvargOverlay overlay;
+	private ZenyxOverlay overlay;
 
-	private ElvargPanel panel;
+	private ZenyxPanel panel;
 	private NavigationButton navButton;
 
 	@Getter
 	private Instant sessionStartTime;
 
 	@Provides
-	ElvargConfig provideConfig(ConfigManager configManager)
+	ZenyxConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ElvargConfig.class);
+		return configManager.getConfig(ZenyxConfig.class);
 	}
 
 	@Override
 	protected void startUp() throws Exception
 	{
-		panel = injector.getInstance(ElvargPanel.class);
+		panel = injector.getInstance(ZenyxPanel.class);
 		panel.init();
 
-		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "elvarg_icon.png");
+		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "zenyx_icon.png");
 
 		navButton = NavigationButton.builder()
-			.tooltip("Elvarg Rebirth")
+			.tooltip("Zenyx")
 			.icon(icon)
 			.priority(5)
 			.panel(panel)
@@ -143,3 +143,4 @@ public class ElvargPlugin extends Plugin
 		return client.getGameState() == GameState.LOGGED_IN;
 	}
 }
+

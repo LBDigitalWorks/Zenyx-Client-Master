@@ -32,7 +32,7 @@ class LoginScreen(val client : Client) {
 
     private var backgroundStopWatch: StopWatch? = null
     var opacity = 0
-    private var backgroundSprite = LoginBackground.ELVARG_REBIRTH_LOGIN.spriteID
+    private var backgroundSprite = LoginBackground.ZENYX_LOGIN.spriteID
 
     private val fadeToBlack: DoubleProperty = SimpleDoubleProperty(256.0)
 
@@ -99,7 +99,7 @@ class LoginScreen(val client : Client) {
         val centerX = GameEngine.canvasWidth / 2
         val centerY = GameEngine.canvasHeight / 2
 
-        LoginBackground.backGroundSprite.get(LoginBackground.ELVARG_REBIRTH.spriteID)!!.drawAdvancedSprite(0, 0)
+        LoginBackground.backGroundSprite.get(LoginBackground.ZENYX.spriteID)!!.drawAdvancedSprite(0, 0)
        // Client.LOGO.drawAdvancedSprite(centerX - (444 / 2),centerY - (GameEngine.canvasHeight / 2) + 17)
 
         val barWidth = 540
@@ -114,7 +114,7 @@ class LoginScreen(val client : Client) {
         Rasterizer2D.drawBox(x + 2,y + 2, barWidth - (Math.round(client.loadingPercent * offset).toInt() / 2),30,0x8C1111);
 
         Client.instance.newBoldFont.drawCenteredString((client.loadingText + " - " + client.loadingPercent) + "%", x + (barWidth / 2), y + 21, 0xFFFFFF,0)
-        Client.instance.newBoldFont.drawCenteredString("Elvarg Rebirth" + " is loading - please wait...", x + (barWidth / 2), y - 14, 0xFFFFFF,0)
+        Client.instance.newBoldFont.drawCenteredString("Zenyx" + " is loading - please wait...", x + (barWidth / 2), y - 14, 0xFFFFFF,0)
     }
 
     private fun drawLoginScreen() {
@@ -130,7 +130,7 @@ class LoginScreen(val client : Client) {
         handleBackgrounds()
         Rasterizer2D.drawBox(0,0,GameEngine.canvasWidth,GameEngine.canvasHeight,0x000000)
         if (backgroundSprite != -1) {
-            LoginBackground.backGroundSprite.get(LoginBackground.ELVARG_REBIRTH_LOGIN.spriteID)!!.drawAdvancedSprite(centerX - (766 / 2),centerY - (503 / 2),alpha)
+            LoginBackground.backGroundSprite.get(LoginBackground.ZENYX_LOGIN.spriteID)!!.drawAdvancedSprite(centerX - (766 / 2),centerY - (503 / 2),alpha)
         }
         client.loginAsset5.drawSprite(274, 213)
         client.loginAsset6.drawSprite(319, 265)
@@ -380,3 +380,4 @@ class LoginScreen(val client : Client) {
     }
 
 }
+

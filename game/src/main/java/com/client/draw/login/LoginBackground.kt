@@ -22,8 +22,8 @@ enum class LoginBackground(val spriteID : Int = -1) {
     A_KINGDOM_DIVIDED(18),
     NEX(19),
     TOMBS_OF_AMASCUT(20),
-    ELVARG_REBIRTH(21),
-    ELVARG_REBIRTH_LOGIN(22);
+    ZENYX(21),
+    ZENYX_LOGIN(22);
 
     companion object {
         val backGroundSprite : MutableMap<Int,Sprite> = emptyMap<Int,Sprite>().toMutableMap()

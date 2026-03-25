@@ -27,8 +27,8 @@ public class LootViewer extends RSInterface {
         MYSTERY_BOX("Mystery Box", -1),
         SUPER_MYSTERY_BOX("Super M. Box", -1),
         ULTRA_MYSTERY_BOX("Ultra M. Box", -1),
-        SHADOW_CHEST("Elvarg Chest", -1),
-        SUPER_ELVARG_CHEST("Super Elvarg Chest", -1),
+        SHADOW_CHEST("Zenyx Chest", -1),
+        SUPER_ELVARG_CHEST("Super Zenyx Chest", -1),
         FOE_MYSTERY_CHEST("FoE M. Chest", -1),
         SLAYER_MYSTERY_CHEST("Slayer M. Chest", -1),
         BRIMSTONE_KEY("Brimstone Key", -1),
@@ -186,3 +186,4 @@ public class LootViewer extends RSInterface {
         return id;
     }
 }
+

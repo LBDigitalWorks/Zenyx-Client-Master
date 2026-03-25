@@ -1,4 +1,4 @@
-rootProject.name = "Elvarg Rebirth - Runelite"
+rootProject.name = "Zenyx - Runelite"
 
 dependencyResolutionManagement {
     @Suppress("UnstableApiUsage")

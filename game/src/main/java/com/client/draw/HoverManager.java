@@ -135,7 +135,7 @@ public class HoverManager {
         menus.put(13347, new HoverMenu("Contains various rare pets:",
                 Arrays.asList(12703, 12816, 12655, 13247, 12648, 22000, 22473, 22001, 23603, 23602, 23601, 23600, 22001, 23500)));
 
-        log.info("Elvarg has loaded {}x menu hovers", menus.size());
+        log.info("Zenyx has loaded {}x menu hovers", menus.size());
     }
 
     public static int drawType() {
@@ -443,3 +443,4 @@ public class HoverManager {
     }
 
 }
+

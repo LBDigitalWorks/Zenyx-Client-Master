@@ -13,7 +13,7 @@ public class SoundDump {
 
     public static void main(String[] args) throws Exception {
 
-        File cacheDir = new File(System.getProperty("user.home") + "/elvargV2/cache/LIVE");
+        File cacheDir = new File(System.getProperty("user.home") + "/zenyx/cache/LIVE");
         File dat = new File(cacheDir, "main_file_cache.dat2");
         File idx = new File(cacheDir, "main_file_cache.idx4");
 
