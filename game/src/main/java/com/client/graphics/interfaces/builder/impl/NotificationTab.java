@@ -3,8 +3,8 @@ package com.client.graphics.interfaces.builder.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.client.Client;
 import com.client.Sprite;
-import com.client.features.settings.Preferences;
 import com.client.graphics.interfaces.RSInterface;
 import com.client.graphics.interfaces.builder.InterfaceBuilder;
 import com.client.graphics.interfaces.impl.Interfaces;
@@ -95,16 +95,15 @@ public class NotificationTab extends InterfaceBuilder {
         }
 
         private void handleInputFieldChanged(String type, String message) {
-            Preferences preferences = Preferences.getPreferences();
             switch (type) {
                 case ">value":
-                    preferences.groundItemTextShowMoreThan = message;
+                    Client.instance.preferences().setGroundItemTextShowMoreThan(message);
                     break;
                 case "show":
-                    preferences.groundItemTextShow = message;
+                    Client.instance.preferences().setGroundItemTextShow(message);
                     break;
                 case "hide":
-                    preferences.groundItemTextHide = message;
+                    Client.instance.preferences().setGroundItemTextHide(message);
                     break;
             }
         }
@@ -112,7 +111,8 @@ public class NotificationTab extends InterfaceBuilder {
         private void toggleButton(int id) {
             switch (id) {
                 case ALWAYS_SHOW_UNTRADABLES_BUTTON_ID:
-                    Preferences.getPreferences().groundItemAlwaysShowUntradables = !Preferences.getPreferences().groundItemAlwaysShowUntradables;
+                    Client.instance.preferences().setGroundItemAlwaysShowUntradablesEnabled(
+                            !Client.instance.preferences().isGroundItemAlwaysShowUntradablesEnabled());
                     break;
             }
 
@@ -122,7 +122,8 @@ public class NotificationTab extends InterfaceBuilder {
         public void updateButtonText(int id) {
             switch (id) {
                 case ALWAYS_SHOW_UNTRADABLES_BUTTON_ID:
-                    get(ALWAYS_SHOW_UNTRADABLES_BUTTON_ID + 1).message = Preferences.getPreferences().groundItemAlwaysShowUntradables ? "On" : "Off";
+                    get(ALWAYS_SHOW_UNTRADABLES_BUTTON_ID + 1).message =
+                            Client.instance.preferences().isGroundItemAlwaysShowUntradablesEnabled() ? "On" : "Off";
                     break;
             }
         }

@@ -14,7 +14,6 @@ import com.client.entity.model.Model;
 import com.client.features.EntityTarget;
 import com.client.features.ExperienceDrop;
 import com.client.features.gametimers.GameTimerHandler;
-import com.client.features.settings.Preferences;
 import com.client.graphics.interfaces.RSInterface;
 import com.client.graphics.interfaces.daily.DailyRewards;
 import com.client.graphics.interfaces.eventcalendar.EventCalendar;
@@ -1092,7 +1091,7 @@ public class PacketHandler {
                             String s9 = TextInput.method525(client.packetSize - 4 - (l5.length() + 1) - rights.getLeft() - 1, inStream);
                             String rightsString = PlayerRights.buildCrownString(rights.getRight());
                             client.pushMessage(s9, 7, rightsString + l5);
-                            if (Preferences.getPreferences().pmNotifications && !Client.appFrame.isFocused()) {
+                            if (client.preferences().isPmNotificationsEnabled() && !Client.appFrame.isFocused()) {
                                 Notify.create()
                                         .title(Configuration.CLIENT_TITLE + " private message from " + l5)
                                         .text(s9)

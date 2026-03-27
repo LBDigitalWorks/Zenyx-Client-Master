@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class AntiAliasingMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setAntiAliasing(optionSelected == 0);
+        Client.instance.preferences().setAntiAliasingEnabled(optionSelected == 0);
     }
 }

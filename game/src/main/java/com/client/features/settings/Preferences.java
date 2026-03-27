@@ -9,9 +9,10 @@ import com.client.draw.Rasterizer3D;
 import com.client.graphics.interfaces.RSInterface;
 import com.client.graphics.interfaces.builder.impl.NotificationTab;
 import com.client.graphics.interfaces.impl.SettingsTabWidget;
+import com.client.settings.ClientStoragePaths;
+import com.client.settings.ClientSettingsSync;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import net.runelite.client.RuneLite;
 
 public class Preferences {
 
@@ -64,6 +65,7 @@ public class Preferences {
 				if (node.has("groundItemAlwaysShowUntradables"))
 					preferences.groundItemAlwaysShowUntradables = node.get("groundItemAlwaysShowUntradables").booleanValue();
 
+				ClientSettingsSync.syncAudioToProfile(preferences);
 
 			} else {
 				save();
@@ -76,6 +78,7 @@ public class Preferences {
 
 	public static void save() {
 		try {
+			ClientSettingsSync.syncAudioToPreferences(preferences);
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.writerWithDefaultPrettyPrinter().writeValue(getFileLocation(), preferences);
 		} catch (IOException e) {
@@ -85,7 +88,7 @@ public class Preferences {
 	}
 
 	public static File getFileLocation() {
-		return new File(RuneLite.RUNELITE_DIR,"properties.json");
+		return ClientStoragePaths.preferencesFile();
 	}
 
 	public double soundVolume = 127;
@@ -109,9 +112,9 @@ public class Preferences {
 		// Brightness
 		Rasterizer3D.setBrightness(brightness);
 		SettingsTabWidget.brightnessSlider.setValue(brightness);
-		SettingsTabWidget.musicVolumeSlider.setValue(255 - musicVolume);
-		SettingsTabWidget.soundVolumeSlider.setValue(127 - soundVolume);
-		SettingsTabWidget.areaSoundVolumeSlider.setValue(127 - areaSoundVolume);
+		SettingsTabWidget.musicVolumeSlider.setValue(255 - ClientSettingsSync.getMusicVolume());
+		SettingsTabWidget.soundVolumeSlider.setValue(127 - ClientSettingsSync.getSoundEffectVolume());
+		SettingsTabWidget.areaSoundVolumeSlider.setValue(127 - ClientSettingsSync.getAreaSoundEffectVolume());
 		RSInterface.interfaceCache[SettingsTabWidget.HIDE_LOCAL_PET_OPTIONS].active = hidePetOptions;
 
 		NotificationTab.instance.scrollable.update(">value", groundItemTextShowMoreThan);

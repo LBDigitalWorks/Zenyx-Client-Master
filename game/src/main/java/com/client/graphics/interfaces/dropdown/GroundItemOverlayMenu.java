@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class GroundItemOverlayMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setGroundItemOverlay(optionSelected == 0);
+        Client.instance.preferences().setGroundItemOverlayEnabled(optionSelected == 0);
     }
 }

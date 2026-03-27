@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class FogMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setFog(optionSelected == 0);
+        Client.instance.preferences().setFogEnabled(optionSelected == 0);
     }
 }

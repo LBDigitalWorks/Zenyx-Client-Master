@@ -12,8 +12,8 @@ import com.client.draw.login.worlds.WorldManager.worldList
 import com.client.engine.GameEngine
 import com.client.engine.impl.MouseHandler
 import com.client.audio.StaticSound
-import com.client.features.settings.Preferences
 import com.client.graphics.interfaces.impl.SettingsTabWidget
+import com.client.settings.ClientSettingsSync
 import com.client.settings.SettingManager
 import javafx.beans.property.DoubleProperty
 import javafx.beans.property.SimpleDoubleProperty
@@ -235,10 +235,9 @@ class LoginScreen(val client : Client) {
                 SettingsTabWidget.soundVolumeSlider?.setValue(127.0)
                 SettingsTabWidget.areaSoundVolumeSlider?.setValue(127.0)
             } else {
-                val prefs = Preferences.getPreferences()
-                val music = prefs.musicVolume.toInt()
-                val sound = prefs.soundVolume.toInt()
-                val area = prefs.areaSoundVolume.toInt()
+                val music = ClientSettingsSync.getMusicVolume()
+                val sound = ClientSettingsSync.getSoundEffectVolume()
+                val area = ClientSettingsSync.getAreaSoundEffectVolume()
                 StaticSound.updateMusicVolume(music)
                 StaticSound.updateSoundEffectVolume(sound)
                 StaticSound.updateAreaVolume(area)

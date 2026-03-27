@@ -6,7 +6,6 @@ import com.client.definitions.NpcDefinition;
 // Decompiler options: packimports(3) 
 import com.client.definitions.anim.SequenceDefinition;
 import com.client.entity.model.Model;
-import com.client.features.settings.Preferences;
 import com.client.util.headicon.class515;
 import net.runelite.api.*;
 import net.runelite.api.Point;
@@ -164,7 +163,7 @@ public final class Npc extends Entity implements RSNPC {
 	}
 
 	public boolean isShowMenuOnHover() {
-		return npcPetType == 0 || npcPetType == 2 && !Preferences.getPreferences().hidePetOptions;
+		return npcPetType == 0 || npcPetType == 2 && !Client.instance.preferences().isHidePetOptionsEnabled();
 	}
 
 	public int npcPetType;

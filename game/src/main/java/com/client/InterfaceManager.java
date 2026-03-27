@@ -1367,7 +1367,7 @@ public class InterfaceManager {
     }
 
     public void loadTabArea() {
-        if(client.getUserSettings().isOldGameframe() == false) {
+        if (!client.preferences().isOldGameframe()) {
             for (int i = 0; i < client.redStones.length; i++)
                 client.redStones[i] = new Sprite("Gameframe/redstones/redstone" + i);
 
@@ -1503,7 +1503,7 @@ public class InterfaceManager {
                     { 176, 5 }, { 205, 8 }, { 22, 300 }, { 49, 304 }, { 77, 304 }, { 111, 303 }, { 147, 301 },
                     { 180, 303 }, { 204, 303 }, { 204, 303 } };
             if (Client.tabInterfaceIDs[Client.tabID] != -1) {
-                if(Client.getUserSettings().isOldGameframe() == false) {
+                if (!client.preferences().isOldGameframe()) {
                     if (Client.tabID == 0)
                         client.redStones[0].drawSprite(5 + xOffset, 0 + yOffset);
                     if (Client.tabID == 1)

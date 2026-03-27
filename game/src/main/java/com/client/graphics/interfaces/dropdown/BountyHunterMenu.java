@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class BountyHunterMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setBountyHunter(optionSelected == 0);
+        Client.instance.preferences().setBountyHunterEnabled(optionSelected == 0);
     }
 }

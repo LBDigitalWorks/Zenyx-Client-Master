@@ -3,7 +3,7 @@ package com.client.features.settings;
 import com.client.utilities.FileOperations;
 import com.client.Buffer;
 import com.client.FileArchive;
-import net.runelite.client.RuneLite;
+import com.client.settings.ClientStoragePaths;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class InformationFile {
 	 * The location of the file that contains, or will contain information
 	 * about the client.
 	 */
-	private final Path FILE_LOCATION = new File(RuneLite.RUNELITE_DIR,"account_data.dat").toPath();
+	private final Path FILE_LOCATION = ClientStoragePaths.accountDataFile().toPath();
 
 	/**
 	 * Determines if the user name is remembered or not.

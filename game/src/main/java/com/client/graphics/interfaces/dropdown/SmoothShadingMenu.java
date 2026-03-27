@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class SmoothShadingMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setSmoothShading(optionSelected == 0);
+        Client.instance.preferences().setSmoothShadingEnabled(optionSelected == 0);
     }
 }

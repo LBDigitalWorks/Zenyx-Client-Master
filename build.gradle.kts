@@ -23,11 +23,18 @@ allprojects {
     apply(plugin = "application")
     apply(plugin = "com.github.johnrengelman.shadow")
 
+    extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
+        jvmToolchain(11)
+    }
+
     tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(11))
+        }
         setSourceCompatibility(JavaVersion.VERSION_11.toString())
         setTargetCompatibility(JavaVersion.VERSION_11.toString())
     }

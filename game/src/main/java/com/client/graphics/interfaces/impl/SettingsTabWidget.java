@@ -3,7 +3,6 @@ package com.client.graphics.interfaces.impl;
 import com.client.Client;
 import com.client.Configuration;
 import com.client.TextDrawingArea;
-import com.client.features.settings.Preferences;
 import com.client.graphics.interfaces.RSInterface;
 import com.client.graphics.interfaces.dropdown.NpcAttackOptionMenu;
 import com.client.graphics.interfaces.dropdown.PlayerAttackOptionMenu;
@@ -225,7 +224,7 @@ public class SettingsTabWidget extends RSInterface {
 			case RESIZABLE_MODE:
 				break;
 			case 42521:
-				Slider slider = RSInterface.interfaceCache[ZOOM_SLIDER].slider;
+				Slider slider = widget(ZOOM_SLIDER).slider;
 				slider.setValue(600);
 				break;
 			case 42552:
@@ -237,29 +236,43 @@ public class SettingsTabWidget extends RSInterface {
 	public static void switchSettings(int button) {
 		int tab = button - 42502;
 		int[] tabs = new int[] { 42520, 42530, 42540, 42550 };
-		RSInterface.interfaceCache[42500].children[9] = tabs[tab];
+		widget(42500).children[9] = tabs[tab];
 	}
 
 	public static void toggleHidePetOption() {
-		Preferences.getPreferences().hidePetOptions = !Preferences.getPreferences().hidePetOptions;
-		RSInterface.interfaceCache[SettingsTabWidget.HIDE_LOCAL_PET_OPTIONS].active = Preferences.getPreferences().hidePetOptions;
-		log.info("{}", Preferences.getPreferences().hidePetOptions);
+		boolean enabled = !Client.instance.preferences().isHidePetOptionsEnabled();
+		Client.instance.preferences().setHidePetOptionsEnabled(enabled);
+		setActive(HIDE_LOCAL_PET_OPTIONS, enabled);
+		log.info("{}", enabled);
 	}
 
 	public static void updateSettings() {
 		/* Settings */
-		RSInterface.interfaceCache[ACCEPT_AID].active = true;
-		//RSInterface.interfaceCache[RUN].active = Client.instance.settings[152] == 1;
-		RSInterface.interfaceCache[CHAT_EFFECTS].active = true;
-		RSInterface.interfaceCache[SPLIT_PRIVATE_CHAT].active = false;
-		RSInterface.interfaceCache[MOUSE_BUTTONS].active = true;
+		setActive(ACCEPT_AID, true);
+		//setActive(RUN, Client.instance.settings[152] == 1);
+		setActive(CHAT_EFFECTS, true);
+		setActive(SPLIT_PRIVATE_CHAT, false);
+		setActive(MOUSE_BUTTONS, true);
 
-		RSInterface.interfaceCache[41552].active = Client.shiftDrop;
+		setActive(41552, Client.shiftDrop);
 
-		RSInterface.interfaceCache[PLAYER_ATTACK_DROPDOWN].dropdown.setSelected(RSInterface.interfaceCache[42554].dropdown.getOptions()[Configuration.playerAttackOptionPriority]);
-		RSInterface.interfaceCache[NPC_ATTACK_DROPDOWN].dropdown.setSelected(RSInterface.interfaceCache[42556].dropdown.getOptions()[Configuration.npcAttackOptionPriority]);
+		setDropdownSelection(PLAYER_ATTACK_DROPDOWN, Configuration.playerAttackOptionPriority);
+		setDropdownSelection(NPC_ATTACK_DROPDOWN, Configuration.npcAttackOptionPriority);
 
 
+	}
+
+	private static RSInterface widget(int interfaceId) {
+		return RSInterface.get(interfaceId);
+	}
+
+	private static void setActive(int interfaceId, boolean active) {
+		widget(interfaceId).active = active;
+	}
+
+	private static void setDropdownSelection(int interfaceId, int optionIndex) {
+		RSInterface widget = widget(interfaceId);
+		widget.dropdown.setSelected(widget.dropdown.getOptions()[optionIndex]);
 	}
 
 	public static final int PLAYER_ATTACK_DROPDOWN = 42554;

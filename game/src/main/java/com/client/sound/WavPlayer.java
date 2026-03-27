@@ -1,6 +1,6 @@
 package com.client.sound;
 
-import com.client.features.settings.Preferences;
+import com.client.settings.ClientSettingsSync;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -26,7 +26,7 @@ public class WavPlayer {
     public static final float MIN_VOLUME_DB = -80f;
     public static final int MAX_VOLUME = 256;
 
-    public static float volume = (int) ((256f*Preferences.getPreferences().musicVolume)/10);
+    public static float volume = (int) ((256f * ClientSettingsSync.getMusicVolume()) / 10);
 
     public Clip play(File f) throws Exception {
         return this.play(AudioSystem.getAudioInputStream(f));

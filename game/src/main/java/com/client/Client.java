@@ -296,7 +296,11 @@ public class Client extends GameEngine implements RSClient {
 
 
 	public int getDragSetting(int interfaceId) {
-		return interfaceId == 3214 ? Preferences.getPreferences().dragTime : 5;
+		return interfaceId == 3214 ? preferencesFacade.getDragTime() : 5;
+	}
+
+	public ClientPreferencesFacade preferences() {
+		return preferencesFacade;
 	}
 
 
@@ -319,6 +323,8 @@ public class Client extends GameEngine implements RSClient {
 	EntityTarget entityTarget;
 
 	public InformationFile informationFile = new InformationFile();
+	final ClientRememberedState rememberedState = new ClientRememberedState(informationFile);
+	final ClientPreferencesFacade preferencesFacade = new ClientPreferencesFacade(this);
 
 	public static boolean snowVisible = Configuration.CHRISTMAS ? true : false;
 
@@ -465,11 +471,7 @@ public class Client extends GameEngine implements RSClient {
 	}
 
 	private void setBounds() {
-		Preferences.getPreferences().fixed = !isResized();
-		Preferences.getPreferences().screenWidth = canvasWidth;
-		Preferences.getPreferences().screenHeight = canvasHeight;
-
-
+		ClientSettingsBootstrap.syncCanvasPreferences(this);
 	}
 
 
@@ -4075,54 +4077,9 @@ public class Client extends GameEngine implements RSClient {
 	// processMenuActions and doAction moved to MenuHandler
 	public static boolean removeRoofs = true, leftClickAttack = true, chatEffectsEnabled = true, drawOrbs = true;
 
-	private void setConfigButtonsAtStartup() {
-		Preferences.getPreferences().updateClientConfiguration();
-		if (settingManager.getMuteAll()) {
-			StaticSound.updateMusicVolume(0);
-			StaticSound.updateSoundEffectVolume(0);
-			StaticSound.updateAreaVolume(0);
-			SettingsTabWidget.musicVolumeSlider.setValue(255);
-			SettingsTabWidget.soundVolumeSlider.setValue(127);
-			SettingsTabWidget.areaSoundVolumeSlider.setValue(127);
-		}
-		setConfigButton(23101, drawOrbs);
-		setConfigButton(23109, splitPrivateChat);
-		setConfigButton(23107, chatEffectsEnabled);
-		setConfigButton(23103, informationFile.isRememberRoof() ? true : false);
-		setConfigButton(23105, leftClickAttack);
-		setConfigButton(23111, getUserSettings().isGameTimers());
-		setConfigButton(23113, getUserSettings().isShowEntityTarget());
-		setConfigButton(23115, informationFile.isRememberVisibleItemNames() ? true : false);
-		setConfigButton(23118, shiftDrop ? true : false);
-		SettingsTabWidget.updateSettings();
-		setConfigButton(23001, true);
-		setConfigButton(953, true);
-
-		setDropDown(SettingsInterface.OLD_GAMEFRAME, getUserSettings().isOldGameframe());
-		setDropDown(SettingsInterface.GAME_TIMERS, getUserSettings().isGameTimers());
-		setDropDown(SettingsInterface.ANTI_ALIASING, getUserSettings().isAntiAliasing());
-		setDropDown(SettingsInterface.GROUND_ITEM_NAMES, getUserSettings().isGroundItemOverlay());
-		setDropDown(SettingsInterface.FOG, getUserSettings().isFog());
-		setDropDown(SettingsInterface.SMOOTH_SHADING, getUserSettings().isSmoothShading());
-		setDropDown(SettingsInterface.TILE_BLENDING, getUserSettings().isTileBlending());
-		setDropDown(SettingsInterface.BOUNTY_HUNTER, getUserSettings().isBountyHunter());
-		setDropDown(SettingsInterface.ENTITY_TARGET, getUserSettings().isShowEntityTarget());
-		setDropDown(SettingsInterface.CHAT_EFFECT, getUserSettings().getChatColor());
-		setDropDown(SettingsInterface.INVENTORY_MENU, getUserSettings().isInventoryContextMenu() ? 1 : 0);
-		setDropDown(SettingsInterface.STRETCHED_MODE, getUserSettings().isStretchedMode());
-
-		setDropDown(SettingsInterface.PM_NOTIFICATION, Preferences.getPreferences().pmNotifications ? 0 : 1);
-
-		/** Sets the brightness level **/
-		RSInterface class9_2 = RSInterface.interfaceCache[910];
-		if (class9_2.scripts != null && class9_2.scripts[0][0] == 5) {
-			int i2 = class9_2.scripts[0][1];
-			if (variousSettings[i2] != class9_2.anIntArray212[0]) {
-				variousSettings[i2] = class9_2.anIntArray212[0];
-				updateVarp(i2);
-				needDrawTabArea = true;
-			}
-		}
+	void setConfigButtonsAtStartup() {
+		ClientSettingsBootstrap.applyStartupSettings(this);
+		ClientSettingsBootstrap.applyBrightnessConfig(this);
 	}
 
 	boolean clickConfigButton(int i) {
@@ -4197,13 +4154,8 @@ public class Client extends GameEngine implements RSClient {
 
 			case 23103:
 				setConfigButton(i, removeRoofs = !removeRoofs);
-				informationFile.setRememberRoof(informationFile.isRememberRoof() ? false : true);
-				try {
-					informationFile.write();
-					System.out.println("Written to: " + informationFile.isRememberRoof());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				rememberedState.toggleRememberRoofs();
+				System.out.println("Written to: " + rememberedState.remembersRoofs());
 				return true;
 
 			case 23105:
@@ -4228,12 +4180,7 @@ public class Client extends GameEngine implements RSClient {
 
 			case 23115:
 				//setConfigButton(i, groundItemsOn = !groundItemsOn);
-				informationFile.setRememberRoof(informationFile.isRememberVisibleItemNames() ? false : true);
-				try {
-					informationFile.write();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				rememberedState.toggleRememberVisibleItemNames();
 				return true;
 
 		}
@@ -4241,7 +4188,7 @@ public class Client extends GameEngine implements RSClient {
 		return false;
 	}
 
-	private void setDropDown(Setting setting, Object value) {
+	void setDropDown(Setting setting, Object value) {
 		RSInterface widget = RSInterface.interfaceCache[setting.getInterfaceId()];
 		if (widget == null) {
 			throw new NullPointerException("Widget is null: " + setting.getInterfaceId());
@@ -4902,13 +4849,13 @@ public class Client extends GameEngine implements RSClient {
 											try {
 												graphics = inputString.split(" ")[1];
 												if (graphics.equalsIgnoreCase("on")) {
-													getUserSettings().setSmoothShading(true);
-													getUserSettings().setTileBlending(true);
-													getUserSettings().setAntiAliasing(true);
+													preferencesFacade.setSmoothShadingEnabled(true);
+													preferencesFacade.setTileBlendingEnabled(true);
+													preferencesFacade.setAntiAliasingEnabled(true);
 												} else if (graphics.equalsIgnoreCase("off")) {
-													getUserSettings().setSmoothShading(false);
-													getUserSettings().setTileBlending(false);
-													getUserSettings().setAntiAliasing(false);
+													preferencesFacade.setSmoothShadingEnabled(false);
+													preferencesFacade.setTileBlendingEnabled(false);
+													preferencesFacade.setAntiAliasingEnabled(false);
 												}
 											} catch (Exception e) {
 												pushMessage("Not a valid screenmode.", 0, "");
@@ -4917,12 +4864,12 @@ public class Client extends GameEngine implements RSClient {
 
 
 										if (inputString.equals("::317")) {
-											if (getUserSettings().isOldGameframe() == false) {
-												getUserSettings().setOldGameframe(true);
+											if (!preferencesFacade.isOldGameframe()) {
+												preferencesFacade.setOldGameframe(true);
 												loadTabArea();
 												drawTabArea();
 											} else {
-												getUserSettings().setOldGameframe(false);
+												preferencesFacade.setOldGameframe(false);
 												loadTabArea();
 												drawTabArea();
 											}
@@ -5012,7 +4959,7 @@ public class Client extends GameEngine implements RSClient {
 													amount = 100;
 													pushMessage("The maximum drag setting is 100.");
 												}
-												Preferences.getPreferences().dragTime = amount;
+												preferencesFacade.setDragTime(amount);
 												pushMessage("Your drag time has been set to " + amount + " (default is 5).");
 											} catch (Exception e) {
 												pushMessage("Invalid format, here's an example: [::drag 5]");
@@ -5742,7 +5689,7 @@ public class Client extends GameEngine implements RSClient {
 			if (!flag) {
 				drawLoginScreen();
 			}
-			setConfigButton(23103, informationFile.isRememberRoof() ? true : false);
+			setConfigButton(23103, rememberedState.remembersRoofs());
 			socketStream = new RSSocket( openSocket(port + portOff));
 			long l = StringUtils.longForName(s);
 			int i = (int) (l >> 16 & 31L);
@@ -5849,8 +5796,8 @@ public class Client extends GameEngine implements RSClient {
 			if (responseCode == 2) {
 				Arrays.stream(RSInterface.interfaceCache).filter(Objects::nonNull).forEach(rsi -> rsi.scrollPosition = 0);
 
-				Preferences.getPreferences().updateClientConfiguration();
-				Preferences.getPreferences().updateClientConfiguration();
+				preferencesFacade.updateClientConfiguration();
+				preferencesFacade.updateClientConfiguration();
 				@SuppressWarnings("unused")
 				int rights = socketStream.read();
 				flagged = socketStream.read() == 1;
@@ -7084,98 +7031,22 @@ public class Client extends GameEngine implements RSClient {
 							drawLoadingText(96, "Preparing game engine");
 							new Sprite("Gameframe317/fixed/mapBack");
 							new Sprite("Gameframe/fixed/mapBack");
-							if (getUserSettings().isOldGameframe() == false) {
+							if (!preferencesFacade.isOldGameframe()) {
 								mapBack = new Sprite("Gameframe/fixed/mapBack");
 							} else {
 								mapBack = new Sprite("Gameframe317/fixed/mapBack");
 							}
 							drawLoadingText(97, "Preparing game engine");
-							for (int pixelY = 0; pixelY < 33; pixelY++) {
-								int k6 = 999;
-								int i7 = 0;
-								for (int pixelX = 0; pixelX < 34; pixelX++) {
-									if (mapBack.myPixels[pixelX + pixelY * mapBack.myWidth] == 0) {
-										if (k6 == 999)
-											k6 = pixelX;
-										continue;
-									}
-									if (k6 == 999)
-										continue;
-									i7 = pixelX;
-									break;
-								}
-								anIntArray968[pixelY] = k6;
-								anIntArray1057[pixelY] = i7 - k6;
-							}
+							ClientStartupCoordinator.initializeMapbackMasks(
+								mapBack,
+								anIntArray968,
+								anIntArray1057,
+								anIntArray1052,
+								anIntArray1229
+							);
 							drawLoadingText(99, "Preparing game engine");
-							for (int pixelY = 1; pixelY < 153; pixelY++) {
-								int j7 = 999;
-								int l7 = 0;
-								for (int pixelX = 24; pixelX < 177; pixelX++) {
-									if (mapBack.myPixels[pixelX + pixelY * mapBack.myWidth] == 0 && (pixelX > 34 || pixelY > 34)) {
-										if (j7 == 999) {
-											j7 = pixelX;
-										}
-										continue;
-									}
-									if (j7 == 999) {
-										continue;
-									}
-									l7 = pixelX;
-									break;
-								}
-								anIntArray1052[pixelY - 1] = j7 - 24;
-								anIntArray1229[pixelY - 1] = l7 - j7;
-							}
-							drawLoadingText(99, "Preparing game engine");
-							try {
-								macAddress = GetNetworkAddress.GetAddress("mac");
-								if (macAddress == null)
-									macAddress = "";
-								if (Configuration.developerMode) {
-									System.out.println(macAddress);
-								}
-							} catch (Exception e) {
-								e.printStackTrace();
-								macAddress = "";
-							}
-
-							setConfigButtonsAtStartup();
-							try {
-								informationFile.read();
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-
-							if (informationFile.isUsernameRemembered()) {
-								myUsername = informationFile.getStoredUsername();
-							}
-							if (informationFile.isPasswordRemembered()) {
-								setPassword(informationFile.getStoredPassword());
-							}
-							if (informationFile.isRememberRoof()) {
-								removeRoofs = true;
-							}
-							drawLoadingText(100, "Preparing game engine");
-
-							ObjectDefinition.clientInstance = this;
-							NpcDefinition.clientInstance = this;
-
-							if (Configuration.PRINT_EMPTY_INTERFACE_SECTIONS) {
-								if (Configuration.developerMode) {
-									RSInterface.printEmptyInterfaceSections();
-								} else {
-									System.err.println("PRINT_EMPTY_INTERFACE_SECTIONS is toggled but you must be in dev mode.");
-								}
-							}
-
-							Preferences.load();
-
-							Client.titleLoadingStage = 210;
-							loginScreen.setup();
-
-							loginScreen.setLoginState(LoginState.LOGIN);
-							setGameState(GameState.LOGIN_SCREEN);
+							macAddress = ClientStartupCoordinator.resolveMacAddress();
+							ClientStartupCoordinator.finishLoginBootstrap(this);
 							return;
 						} catch (Exception exception) {
 							exception.printStackTrace();
@@ -8448,7 +8319,7 @@ public class Client extends GameEngine implements RSClient {
 				mapArea[2].drawSprite(canvasWidth - 183, 0);
 				mapArea[4].drawSprite(canvasWidth - 160, 8);
 			}
-			if(getUserSettings().isOldGameframe() && !isResized() ){
+			if(preferencesFacade.isOldGameframe() && !isResized() ){
 				compassImage.rotate(33, compassRotation, anIntArray1057, 256, anIntArray968,
 					(!isResized() ? 28 + xOffset : 25), 4,
 					(!isResized() ? 27 + xOffset : canvasWidth - 178), 33, 25);

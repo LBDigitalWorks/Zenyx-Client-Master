@@ -81,7 +81,7 @@ public final class GameTimerHandler {
 	}
 
 	public boolean hasActiveGameTimers() {
-		return Client.getUserSettings().isGameTimers() && !timers.isEmpty();
+		return Client.instance.preferences().isGameTimersEnabled() && !timers.isEmpty();
 	}
 
 	public void drawGameTimers(Client client, int x, int y) throws ParseException {

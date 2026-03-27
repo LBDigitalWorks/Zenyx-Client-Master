@@ -2,10 +2,8 @@ package com.client.settings
 
 import com.client.draw.login.LoginBackground
 import com.google.gson.Gson
-import net.runelite.client.RuneLite
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.io.File
 
 class SettingManager(
     var accounts: MutableMap<String, AccountData> = mutableMapOf(),
@@ -23,7 +21,7 @@ class SettingManager(
 ) {
 
     companion object {
-        private val settingSaveLocation = File(RuneLite.PROFILES_DIR, "settings.json")
+        private val settingSaveLocation = ClientStoragePaths.profileSettingsFile()
         private val logger: Logger = LoggerFactory.getLogger(SettingManager::class.java)
 
         fun load(): SettingManager {

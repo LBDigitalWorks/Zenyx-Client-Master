@@ -4,7 +4,6 @@ import com.client.Client;
 import com.client.Sprite;
 import com.client.audio.StaticSound;
 import com.client.draw.Rasterizer3D;
-import com.client.features.settings.Preferences;
 import com.client.graphics.interfaces.RSInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -105,19 +104,19 @@ public class Slider {
 
 				break;
 			case BRIGHTNESS:
-				Preferences.getPreferences().brightness = minValue + maxValue - value;
-				Rasterizer3D.setBrightness(Preferences.getPreferences().brightness);
+				Client.instance.preferences().setBrightness(minValue + maxValue - value);
+				Rasterizer3D.setBrightness(Client.instance.preferences().getBrightness());
 				break;
 			case MUSIC:
-				Preferences.getPreferences().musicVolume = value;
+				Client.instance.preferences().setMusicVolume(value);
 				StaticSound.updateMusicVolume((int) value);
 				break;
 			case SOUND:
-				Preferences.getPreferences().soundVolume = value;
+				Client.instance.preferences().setSoundVolume(value);
 				StaticSound.updateSoundEffectVolume((int) value);
 				break;
 			case AREA_SOUND:
-				Preferences.getPreferences().areaSoundVolume = value;
+				Client.instance.preferences().setAreaSoundVolume(value);
 				StaticSound.updateAreaVolume((int) value);
 				break;
 		}
@@ -133,15 +132,15 @@ public class Slider {
 
 			if (tabInterfaceId != -1) {
 
-				if (tabInterfaceId == 42500) { tabInterfaceId = RSInterface.interfaceCache[42500].children[9]; } // Settings tab adjustment
-				RSInterface widget = RSInterface.interfaceCache[tabInterfaceId];
+				if (tabInterfaceId == 42500) { tabInterfaceId = RSInterface.get(42500).children[9]; } // Settings tab adjustment
+				RSInterface widget = RSInterface.get(tabInterfaceId);
 
 				if (widget.children == null) {
 					return;
 				}
 
 				for (int childId : widget.children) {
-					RSInterface child = RSInterface.interfaceCache[childId];
+					RSInterface child = RSInterface.get(childId);
 					if (child == null || child.slider == null)
 						continue;
 
@@ -155,9 +154,9 @@ public class Slider {
 
 			int interfaceId = Client.instance.openInterfaceID;
 			if (interfaceId != -1) {
-				RSInterface widget = RSInterface.interfaceCache[interfaceId];
+				RSInterface widget = RSInterface.get(interfaceId);
 				for (int childId : widget.children) {
-					RSInterface child = RSInterface.interfaceCache[childId];
+					RSInterface child = RSInterface.get(childId);
 					if (child == null || child.slider == null)
 						continue;
 					child.slider.handleClick(mX, mY, 4, 4, child.contentType);

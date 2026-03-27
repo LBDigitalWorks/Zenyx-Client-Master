@@ -4,8 +4,6 @@ import com.client.Client;
 import com.client.graphics.interfaces.MenuItem;
 import com.client.graphics.interfaces.RSInterface;
 
-import java.awt.*;
-
 public class StretchedModeMenu implements MenuItem {
 
 
@@ -16,9 +14,9 @@ public class StretchedModeMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
         boolean bool = optionSelected == 0;
-        if (Client.getUserSettings().isStretchedMode() == bool)
+        if (Client.instance.preferences().isStretchedModeEnabled() == bool)
             return;
-        Client.getUserSettings().setStretchedMode(bool);
+        Client.instance.preferences().setStretchedModeEnabled(bool);
         updateStretchedMode(bool);
     }
 }

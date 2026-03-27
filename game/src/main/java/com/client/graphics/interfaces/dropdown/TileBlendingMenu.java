@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class TileBlendingMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setTileBlending(optionSelected == 0);
+        Client.instance.preferences().setTileBlendingEnabled(optionSelected == 0);
     }
 }

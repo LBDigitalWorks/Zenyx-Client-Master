@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class EntityTargetOverlayMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setShowEntityTarget(optionSelected == 0);
+        Client.instance.preferences().setEntityTargetEnabled(optionSelected == 0);
     }
 }

@@ -7,6 +7,6 @@ import com.client.graphics.interfaces.RSInterface;
 public class ChatEffectMenu implements MenuItem {
     @Override
     public void select(int optionSelected, RSInterface rsInterface) {
-        Client.getUserSettings().setChatColor(optionSelected);
+        Client.instance.preferences().setChatColor(optionSelected);
     }
 }

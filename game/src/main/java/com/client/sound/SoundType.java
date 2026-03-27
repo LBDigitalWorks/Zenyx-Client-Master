@@ -1,6 +1,6 @@
 package com.client.sound;
 
-import com.client.features.settings.Preferences;
+import com.client.settings.ClientSettingsSync;
 
 public enum SoundType {
     MUSIC, SOUND, AREA_SOUND
@@ -9,11 +9,11 @@ public enum SoundType {
     public double getVolume() {
         switch (this) {
             case MUSIC:
-                return Preferences.getPreferences().musicVolume;
+                return ClientSettingsSync.getMusicVolume();
             case SOUND:
-                return Preferences.getPreferences().soundVolume;
+                return ClientSettingsSync.getSoundEffectVolume();
             case AREA_SOUND:
-                return Preferences.getPreferences().areaSoundVolume;
+                return ClientSettingsSync.getAreaSoundEffectVolume();
             default:
                 throw new IllegalStateException("Didn't handle " + toString());
         }

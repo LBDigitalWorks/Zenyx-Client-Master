@@ -4,15 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.StreamCorruptedException;
 
 import com.client.Client;
-import com.client.sign.Signlink;
-import lombok.extern.java.Log;
-import net.runelite.client.RuneLite;
+import com.client.settings.ClientStoragePaths;
 
 /**
  * 
@@ -29,8 +25,13 @@ public class SettingsManager {
 
 	public static void saveSettings(Client client) throws IOException {
 		// Serialization
+		File file = ClientStoragePaths.legacySerializedSettingsFile();
+		File parent = file.getParentFile();
+		if (parent != null && !parent.exists()) {
+			parent.mkdirs();
+		}
 
-		ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(RuneLite.PROFILES_DIR + "settings.ser"));
+		ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(file));
 		try {
 			output.writeObject(client.getUserSettings());
 		} catch(Exception e) {
@@ -43,13 +44,13 @@ public class SettingsManager {
 	
 	public static void loadSettings() {
         try {
-        	File discover = new File(RuneLite.PROFILES_DIR + "settings.ser");
+        	File discover = ClientStoragePaths.legacySerializedSettingsFile();
         	if (!discover.exists()) {
         		Client.setUserSettings(Settings.getDefault());
         		return;
         	}
 
-        	try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(Signlink.getCacheDirectory() + "settings.ser"))) {
+        	try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(discover))) {
 				Settings settings = (Settings) input.readObject();
 				input.close();
 				if (settings != null) {
