@@ -76,5 +76,4 @@ tasks {
         classpath = project.sourceSets.main.get().runtimeClasspath
         mainClass.set("Application")
     }
-
 }

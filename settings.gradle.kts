@@ -19,4 +19,4 @@ pluginManagement {
     }
 }
 
-include("game","runelite")
+include("game", "runelite")
